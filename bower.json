@@ -1,0 +1,15 @@
+{
+  "name": "adapt-mcqi",
+  "version": "0.0.1",
+  "framework": "^2.0.0",
+  "homepage": "https://github.com/anthonystarkie/adapt-mcqi",
+  "displayName" : "Item-scoring Multiple Choice Question",
+  "component" : "mcqi",
+  "description": "A multiple choice question component with item-specific scoring options",
+  "main": "/js/adapt-mcqi.js",
+  "keywords": [
+    "adapt-plugin",
+    "adapt-component"
+  ],
+  "license": "GPLv3"
+}

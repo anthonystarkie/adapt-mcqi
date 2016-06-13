@@ -1,0 +1,22 @@
+<div class="mcqi-inner component-inner" role="region" aria-label="{{_globals._components._mcqi.ariaRegion}}" {{#if _globals._components._mcqi.ariaRegion}}tabindex="0"{{/if}}>
+    {{> component this}}
+    <div class="mcqi-widget component-widget {{#unless _isEnabled}} disabled {{#if _isInteractionComplete}} complete submitted show-user-answer {{#if _isCorrect}}correct{{/if}} {{/if}} {{/unless}}">
+        {{#each _items}}
+        <div class="mcqi-item component-item component-item-color {{#unless ../_isEnabled}} {{#if _isCorrect}} correct{{else}} incorrect{{/if}} {{/unless}} item-{{@index}}">
+            <input type="checkbox" id="{{../_id}}-{{@index}}" aria-labelledby="{{../_id}}-{{@index}}-aria"{{#unless ../_isEnabled}} disabled{{/unless}} aria-label="{{a11y_normalize text}}"/>
+            <label aria-hidden="true" id="{{../_id}}-{{@index}}-aria" for="{{../_id}}-{{@index}}" class="component-item-text-color component-item-border{{#unless ../_isEnabled}} disabled {{/unless}}{{#if _isSelected}} selected{{/if}}">
+                <div class="mcqi-item-state">
+                    <div class="mcqi-item-icon mcqi-answer-icon {{#if ../_isRadio}}radio{{else}}checkbox{{/if}} component-item-text-color icon"></div>
+                    <div class="mcqi-item-icon mcqi-correct-icon icon icon-tick"></div>
+                    <div class="mcqi-item-icon mcqi-incorrect-icon icon icon-cross"></div>
+                </div>
+                <div class="mcqi-item-inner h5">
+                    {{{text}}}
+                </div>
+            </label>
+        </div>
+        {{/each}}
+    </div>
+    <div class="buttons">
+    </div>
+</div>
