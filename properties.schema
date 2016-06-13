@@ -57,6 +57,15 @@
             "validators": [],
             "help": "Set this item to 'true' if this is one of the correct answers"
           },
+          "_itemScore": {
+            "type":"number",
+            "required":false,
+            "default":1,
+            "title": "Item Score",
+            "inputType":"Number",
+            "validators": ["number"],
+            "help": "The score assigned to this item"
+          },
           "feedback": {
             "type":"string",
             "required":false,
@@ -132,6 +141,15 @@
       "inputType": "Number",
       "validators": ["number"],
       "help": "How much this question is worth"
+    },
+    "_scoreIndividualItems": {
+      "type":"boolean",
+      "required":false,
+      "default": false,
+      "title": "Score by Individual Items",
+      "inputType": {"type": "Boolean", "options": [true, false]},
+      "validators": [],
+      "help": "If set to 'true', the question score will be calculated from the individual item scores. If 'false', the Question Weight will be used for fully correct answers only."
     },
     "_selectable": {
       "type":"number",

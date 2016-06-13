@@ -8,6 +8,7 @@
   "_attempts":1,
   "_shouldDisplayAttempts": false,
   "_questionWeight":1,
+  "_scoreIndividualItems": false,
   "_isRandom":false,
   "_selectable":1,
   "_canShowModelAnswer": true,
@@ -19,19 +20,23 @@
   "_items": [
     {
       "text": "This is option 1.",
+      "itemScore": 1,
       "_shouldBeSelected":true
     },
     {
       "text": "This is option 2.",
+      "itemScore": 0,
       "_shouldBeSelected":false,
       "feedback":"Option two incorrect feedback"
     },
     {
       "text": "This is option 3.",
+      "itemScore": 0,
       "_shouldBeSelected":false
     },
     {
       "text": "This is option 4.",
+      "itemScore": 0,
       "_shouldBeSelected":false
     }
   ],

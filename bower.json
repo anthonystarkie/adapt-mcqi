@@ -1,6 +1,6 @@
 {
   "name": "adapt-mcqi",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "framework": "^2.0.0",
   "homepage": "https://github.com/anthonystarkie/adapt-mcqi",
   "displayName" : "Item-scoring Multiple Choice Question",
