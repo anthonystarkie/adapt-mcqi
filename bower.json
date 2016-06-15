@@ -1,8 +1,9 @@
 {
   "name": "adapt-mcqi",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "framework": "^2.0.0",
   "homepage": "https://github.com/anthonystarkie/adapt-mcqi",
+  "issues": "https://github.com/anthonystarkie/adapt-mcqi/issues",
   "displayName" : "Item-scoring Multiple Choice Question",
   "component" : "mcqi",
   "description": "A multiple choice question component with item-specific scoring options",

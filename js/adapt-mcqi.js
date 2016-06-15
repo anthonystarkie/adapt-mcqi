@@ -216,12 +216,47 @@ define(function(require) {
             return answeredCorrectly;
         },
 
-        // Sets the score based upon the questionWeight
-        // Can be overwritten if the question needs to set the score in a different way
-        setScore: function() {
+        // Calculate the score from itemScore values
+        calculateItemScore: function() {
+         
+            var totalItemScore = 0;
+            
+            _.each(this.model.get('_items'), function(item) {
+
+                var itemSelected = (item._isSelected || false);
+
+                if (item._shouldBeSelected) {            
+
+                    if (itemSelected) {
+          
+                        // Add the itemScore into the value for totalItemScore
+                        totalItemScore += item._itemScore;
+                        
+                    }
+                } 
+            }, this);
+
+            return totalItemScore;  
+        },
+        // Calculate the score when using the standard questionWeight
+        // Original function setScore content
+        calculateQuestionScore: function() {
             var questionWeight = this.model.get("_questionWeight");
             var answeredCorrectly = this.model.get('_isCorrect');
             var score = answeredCorrectly ? questionWeight : 0;
+            this.model.set('_score', score);    
+        },
+        
+        // Sets the score based upon the questionWeight
+        // Can be overwritten if the question needs to set the score in a different way
+        setScore: function() {
+            
+            if (this.model.get("_scoreIndividualItems") === true)
+            {
+                var score = this.calculateItemScore();
+            } else {
+                var score = this.calculateQuestionScore();
+            }
             this.model.set('_score', score);
         },
 
