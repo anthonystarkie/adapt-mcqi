@@ -244,7 +244,7 @@ define(function(require) {
             var questionWeight = this.model.get("_questionWeight");
             var answeredCorrectly = this.model.get('_isCorrect');
             var score = answeredCorrectly ? questionWeight : 0;
-            this.model.set('_score', score);    
+            this.model.set('_questionScore', score);    
         },
         
         // Sets the score based upon the questionWeight
@@ -253,9 +253,11 @@ define(function(require) {
             
             if (this.model.get("_scoreIndividualItems") === true)
             {
-                var score = this.calculateItemScore();
+                this.calculateItemScore();
+                var score = this.model.get("_totalItemScore");
             } else {
-                var score = this.calculateQuestionScore();
+                this.calculateQuestionScore();
+                var score = this.model.get("_questionScore");
             }
             this.model.set('_score', score);
         },

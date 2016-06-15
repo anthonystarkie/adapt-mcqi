@@ -8,7 +8,7 @@
   "_attempts":1,
   "_shouldDisplayAttempts": false,
   "_questionWeight":1,
-  "_scoreIndividualItems": false,
+  "_scoreIndividualItems": true,
   "_isRandom":false,
   "_selectable":1,
   "_canShowModelAnswer": true,
